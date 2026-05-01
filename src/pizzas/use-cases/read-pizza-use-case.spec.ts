@@ -1,11 +1,12 @@
 import { DataSource, Repository } from 'typeorm';
-import CreatePizzaUseCase from './create-pizza-use-case';
+import { NotFoundException } from '@nestjs/common';
+import ReadPizzaUseCase from './read-pizza-use-case';
 import Pizza from '../entities/pizza';
 
-describe('CreatePizzaUseCase', () => {
+describe('ReadPizzaUseCase', () => {
   let dataSource: DataSource;
   let pizzaRepository: Repository<Pizza>;
-  let createPizzaUseCase: CreatePizzaUseCase;
+  let readPizzaUseCase: ReadPizzaUseCase;
 
   beforeAll(async () => {
     dataSource = new DataSource({
@@ -27,11 +28,11 @@ describe('CreatePizzaUseCase', () => {
 
   beforeEach(async () => {
     pizzaRepository = dataSource.getRepository(Pizza);
-    createPizzaUseCase = new CreatePizzaUseCase(pizzaRepository);
+    readPizzaUseCase = new ReadPizzaUseCase(pizzaRepository);
     await pizzaRepository.clear();
   });
 
-  it('should save the pizza and return the created entity', async () => {
+  it('should return pizza when found', async () => {
     const pizzaData: Omit<Pizza, 'id'> = {
       name: 'Margherita',
       ingredients: ['tomato', 'mozzarella'],
@@ -41,9 +42,19 @@ describe('CreatePizzaUseCase', () => {
       category: 'Tradicional',
     };
 
-    const result = await createPizzaUseCase.execute(pizzaData);
+    const createdPizza = await pizzaRepository.save(pizzaData);
+
+    const result = await readPizzaUseCase.execute(createdPizza.id!);
 
     expect(result).toMatchObject(pizzaData);
-    expect(result.id).toBeDefined();
+    expect(result.id).toBe(createdPizza.id);
+  });
+
+  it('should throw NotFoundException when pizza not found', async () => {
+    const nonExistentId = 'non-existent-id';
+
+    await expect(readPizzaUseCase.execute(nonExistentId)).rejects.toThrow(
+      NotFoundException,
+    );
   });
 });

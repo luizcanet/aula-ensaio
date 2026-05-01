@@ -15,4 +15,7 @@ export default class CreatePizzaRequest {
 
   @ApiProperty()
   largePrice!: number;
+
+  @ApiProperty({ enum: ['Tradicional', 'Especial', 'Doce'] })
+  category!: 'Tradicional' | 'Especial' | 'Doce';
 }

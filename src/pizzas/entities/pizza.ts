@@ -27,4 +27,8 @@ export default class Pizza {
   @ApiProperty()
   @Column()
   largePrice!: number;
+
+  @ApiProperty({ enum: ['Tradicional', 'Especial', 'Doce'] })
+  @Column()
+  category!: 'Tradicional' | 'Especial' | 'Doce';
 }
