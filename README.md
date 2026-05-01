@@ -15,7 +15,8 @@
 
 - Tema: Desenvolvimento de API (Rest)
 - Modelo: Aula de Laboratório
-- Objetivo: Compreender o processo e técnicas de construção de APIs utilizando Node.JS
+- Objetivo: Compreender o processo e técnicas de construção de APIs utilizando
+Node.JS
 
 ### Assuntos Abordados
 
@@ -25,12 +26,13 @@
 - Testes de Unidade
 - Modelo MVC
 - Operações CRUD
-- Padrões de Projetos (Decorators, Repository)
+- Padrões de Projetos (Decorator, Repository)
 - Documentação (OpenAPI/Swagger)
 
 ### Problema
 
-O problema sugerido é desenvolver uma API que faça o gerenciamento de opções de pizzas disponíveis em uma pizzaria.
+O problema sugerido é desenvolver uma API que faça o gerenciamento de opções de
+pizzas disponíveis em uma pizzaria.
 
 ### Casos de Uso
 
@@ -41,7 +43,9 @@ O problema sugerido é desenvolver uma API que faça o gerenciamento de opções
 
 ### Modelo de Domínio
 
-Cada pizza deve ter um nome, uma lista de ingredientes, preço para cada tamanho (Pequena, Média e Grande) e pertencer a uma das seguintes categorias: Tradicional, Especial ou Doce.
+Cada pizza deve ter um nome, uma lista de ingredientes, preço para cada tamanho
+(Pequena, Média e Grande) e pertencer a uma das seguintes categorias:
+Tradicional, Especial ou Doce.
 
 ### Pré-Requisitos
 
@@ -49,3 +53,4 @@ Cada pizza deve ter um nome, uma lista de ingredientes, preço para cada tamanho
 - Noções Básica de Node
 - Programação Orientada a Objetos
 - Noções Básicas sobre Banco de Dados
+- Noções Básicas de Protocolo HTTP
