@@ -50,7 +50,8 @@ Tradicional, Especial ou Doce.
 ### Pré-Requisitos
 
 - Noções Básicas de Git
-- Noções Básica de Node
+- Noções Básicas de Node
+- Noções Básicas de JavaScript/ECMAScript ou TypeScript
 - Programação Orientada a Objetos
 - Noções Básicas sobre Banco de Dados
 - Noções Básicas de Protocolo HTTP
