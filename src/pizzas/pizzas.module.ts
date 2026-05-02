@@ -4,6 +4,7 @@ import PizzasController from './pizzas.controller';
 import CreatePizzaUseCase from './use-cases/create-pizza-use-case';
 import ReadPizzaUseCase from './use-cases/read-pizza-use-case';
 import Pizza from './entities/pizza';
+import UpdatePizzaUseCase from './use-cases/update-pizza-use-case';
 
 @Module({
   imports: [
@@ -24,6 +25,10 @@ import Pizza from './entities/pizza';
     {
       provide: 'ReadPizzaUseCase',
       useClass: ReadPizzaUseCase,
+    },
+    {
+      provide: 'UpdatePizzaUseCase',
+      useClass: UpdatePizzaUseCase,
     },
   ],
 })
