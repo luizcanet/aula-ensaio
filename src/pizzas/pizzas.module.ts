@@ -9,6 +9,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       entities: [],
       synchronize: true,
     }),
+    TypeOrmModule.forFeature([]),
   ],
 })
 export class PizzasModule {}
