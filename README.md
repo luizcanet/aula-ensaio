@@ -55,3 +55,30 @@ Tradicional, Especial ou Doce.
 - Programação Orientada a Objetos
 - Noções Básicas sobre Banco de Dados
 - Noções Básicas de Protocolo HTTP
+
+## Atividades
+
+### Criar Pizza
+
+- [ ] Implementar Entidade Pizza
+- [ ] Implementar CreatePizzaUseCase
+- [ ] Implementar PizzasController com método create()
+- [ ] Atualizar Documentação da API
+
+### Ler Pizza
+
+- [ ] Implementar ReadPizzaUseCase
+- [ ] Implementar método read() em PizzasController
+- [ ] Atualizar Documentação da API
+
+### Atualizar Pizza
+
+- [ ] Implementar UpdatePizzaUseCase
+- [ ] Implementar método update() em PizzasController
+- [ ] Atualizar Documentação da API
+
+### Apagar Pizza
+
+- [ ] Implementar DeletePizzaUseCase
+- [ ] Implementar método delete() em PizzasController
+- [ ] Atualizar Documentação da API
