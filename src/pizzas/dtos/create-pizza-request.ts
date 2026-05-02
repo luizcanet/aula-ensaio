@@ -1,4 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
+import { Category } from '../entities/pizza';
 
 export default class CreatePizzaRequest {
   @ApiProperty()
@@ -17,5 +18,5 @@ export default class CreatePizzaRequest {
   largePrice!: number;
 
   @ApiProperty({ enum: ['Tradicional', 'Especial', 'Doce'] })
-  category!: 'Tradicional' | 'Especial' | 'Doce';
+  category!: Category;
 }

@@ -1,6 +1,12 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { Column, Entity, Generated, PrimaryColumn } from 'typeorm';
 
+export enum Category {
+  Tradicional = 'Tradicional',
+  Especial = 'Especial',
+  Doce = 'Doce',
+}
+
 @Entity()
 export default class Pizza {
   @ApiProperty()
@@ -17,18 +23,18 @@ export default class Pizza {
   ingredients!: string[];
 
   @ApiProperty()
-  @Column()
+  @Column('decimal')
   smallPrice!: number;
 
   @ApiProperty()
-  @Column()
+  @Column('decimal')
   mediumPrice!: number;
 
   @ApiProperty()
-  @Column()
+  @Column('decimal')
   largePrice!: number;
 
   @ApiProperty({ enum: ['Tradicional', 'Especial', 'Doce'] })
   @Column()
-  category!: 'Tradicional' | 'Especial' | 'Doce';
+  category!: Category;
 }
