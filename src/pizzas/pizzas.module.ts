@@ -5,6 +5,7 @@ import CreatePizzaUseCase from './use-cases/create-pizza-use-case';
 import ReadPizzaUseCase from './use-cases/read-pizza-use-case';
 import Pizza from './entities/pizza';
 import UpdatePizzaUseCase from './use-cases/update-pizza-use-case';
+import DeletePizzaUseCase from './use-cases/delete-pizza-use-case';
 
 @Module({
   imports: [
@@ -29,6 +30,10 @@ import UpdatePizzaUseCase from './use-cases/update-pizza-use-case';
     {
       provide: 'UpdatePizzaUseCase',
       useClass: UpdatePizzaUseCase,
+    },
+    {
+      provide: 'DeletePizzaUseCase',
+      useClass: DeletePizzaUseCase,
     },
   ],
 })
